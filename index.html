@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>%%title%%</title>
+
+    <meta name="description" content=%%description%%>
+    <meta name="author" content="Vizrt">
+    <script src="https://use.fontawesome.com/4118bcb0da.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <style>
+      body {
+      font-family: 'Lato', sans-serif;
+      font-size: 20px;
+      margin: 0;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      }
+      
+      .outer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-row: auto;
+      height: auto;
+      grid-gap: 5px;
+      }
+      
+      .outer div.header {
+      background: rgb(39, 117, 131);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      height: 100vh;
+      }
+      
+      .header img {
+      border-radius: 100px;
+      margin: 0 auto;
+      box-shadow: 0 5px 0px 6px rgba(70, 70, 70, 0.68);
+      
+      }
+      
+      ul.social {
+      position: absolute;
+      list-style: none;
+      bottom: 0;
+      right: 0;
+      margin: 20px;
+      }
+      
+      .header h2 {
+      margin-top: 0px;
+      color: goldenrod;
+      }
+      
+      .header h1 {
+      margin-bottom: 5px;
+      }
+      
+      .cv {
+      align-self: center;
+      padding: 4em;
+      }
+      
+      .cv h3 {
+      color: rgb(2337,67,29);
+      }
+      
+      .cv h4 {
+      color: rgb(39, 117, 131);
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="header">
+        <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAmtAAAAJDVkOGZlNTcwLTEwYWEtNGRiZC1iOTgwLTQ1ZDk5OGRlMGZhOA.jpg">
+        <h1>Maja Jaakson</h1>
+        <h2>Creative Developer</h2>
+      </div>
+      <div class="cv">
+        <div id="about-me">
+          <h3>About me</h3>
+          <p>I'm a Canadian front- and back-end web developer living and working in Bergen, Norway. My academic background is in Philosophy and Logic.</p>
+        </div>
+	<!--
+            <div id="projects">
+              <h3>Projects</h3>
+              <h4>Project 1</h4>
+              <p>Some lorem could go here. A personal project to help Canadian hunters find regulations more intuitively. What to Hunt correlates your hunting area and date to give the user relevant information </p>
+              <h4>Project 2</h4>
+              <p>Some lorem could go here. A personal project to help Canadian hunters find regulations more intuitively. What to Hunt correlates your hunting area and date to give the user relevant information </p>
+            </div>
+            
+	    -->
+        <div id="experience">
+          <h3>Experience</h3>
+          <p>I am currently working as the Creative Developer on Vizrt's marketing and communications team. I have familiarity with the following languages, frameworks and technologies:</p>
+          <ul>
+            <li>HTML, CSS, SASS, JS, jQuery, Bootstrap</li>
+            <li>Java, JSP</li>
+            <li>ASP.NET, C#</li>
+            <li>Python</li>
+          </ul>
+	  <ul class="social">
+	  <!-- <li><a class="social" href="https://no.linkedin.com/in/maja-jaakson-b97b7984">LinkedIn</a></li> -->
+	</ul>
+        </div>
+        
+      </div>
+    </div>
+    
+    
+  </body>
+</html>
