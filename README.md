@@ -1,2 +1,2 @@
 # jaakson.github.io
-Personal web psge
+Personal web page of Maja Jaakson
