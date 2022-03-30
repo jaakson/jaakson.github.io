@@ -1,20 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121742851-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
-
-        gtag("config", "UA-121742851-1");
-    </script>
-
+  <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -23,171 +9,191 @@
 
     <meta name="description" content="Personal web page of Maja Jaakson." />
     <meta name="author" content="Maja Jaakson" />
-    <script src="https://use.fontawesome.com/4118bcb0da.js"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500&family=Lato&display=swap"
-        rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500&family=Lato&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
-        body {
-            font-family: "Lato", sans-serif;
-            font-size: 18px;
-            line-height: 1.5em;
-            margin: 0;
-            overflow-x: hidden;
-        }
+      body {
+        font-family: "Lato", sans-serif;
+        font-size: 18px;
+        line-height: 1.5em;
+        margin: 0;
+        overflow-x: hidden;
+      }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: "Crimson Pro", serif;
-            font-weight: 500;
-        }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Crimson Pro", serif;
+        font-weight: 500;
+      }
 
-        h1,
-        h2 {
-            color: #e0dabd;
-        }
+      h1,
+      h2 {
+        color: #e0dabd;
+      }
 
-        h3,
-        p {
-            color: #3b401c;
-            margin: 0.5em 0;
-        }
+      h3,
+      p {
+        color: #3b401c;
+        margin: 0.5em 0;
+      }
 
-        p {
-            line-height: 1.5em;
-        }
+      p {
+        line-height: 1.5em;
+      }
 
-        header {
-            background: #3b401c;
-            transform: skewY(-2deg);
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
+      header {
+        background: #3b401c;
+        transform: skewY(-2deg);
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
 
-        header::before {
-            z-index: -1;
-            content: "";
-            position: absolute;
-            top: -60px;
-            left: 0;
-            width: 100vw;
-            overflow-x: hidden;
-            height: 500px;
-            background: #3b401c;
-            /* fallback for old browsers */
-            background: -webkit-linear-gradient(to top,
-                    #3b401c,
-                    #565562);
-            /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to top,
-                    #3b401c,
-                    #565562);
-            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        }
+      header::before {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        top: -60px;
+        left: 0;
+        width: 100vw;
+        overflow-x: hidden;
+        height: 500px;
+        background: #3b401c;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to top, #3b401c, #565562);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, #3b401c, #565562);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
 
-        header img {
-            margin-top: 50px;
-            transform: skewY(2deg);
-            clip-path: polygon(0 2%, 100% 0%, 100% 98%, 0% 100%);
-        }
+      header img {
+        margin-top: 50px;
+        transform: skewY(2deg);
+        clip-path: polygon(0 2%, 100% 0%, 100% 98%, 0% 100%);
+      }
 
-        .header-contents {
-            display: flex;
+      .header-contents {
+        display: flex;
 
-            flex-direction: column;
-            align-items: flex-start;
-        }
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
-        h1 {
-            font-size: 2rem;
-            margin: 0.5em 0 0.25em;
-        }
+      h1 {
+        font-size: 2rem;
+        margin: 0.5em 0 0.25em;
+      }
 
-        h2 {
-            margin: 0 0 0.5em;
-            font-size: 1.3rem;
-        }
+      h2 {
+        margin: 0 0 0.5em;
+        font-size: 1.3rem;
+      }
 
-        .cv {
-            transform: skewY(-2deg);
-            padding: 3rem 5vw;
-            max-width: 900px;
-            margin: 0 auto;
-        }
+      .cv {
+        transform: skewY(-2deg);
+        padding: 3rem 5vw;
+        max-width: 900px;
+        margin: 0 auto;
+      }
 
-        #about-me,
-        #experience {
-            transform: skewY(2deg);
-        }
+      #about-me,
+      #experience {
+        transform: skewY(2deg);
+      }
 
-        a {
-            color: #eb00c3;
-        }
+      a {
+        color: #eb00c3;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="header-contents">
-            <img src="static/img/sm_new.jpg" />
-            <h1>Maja Jaakson</h1>
-            <h2>UX engineer &amp; methodology buff</h2>
-        </div>
+      <div class="header-contents">
+        <img src="static/img/sm_new.jpg" />
+        <h1>Maja Jaakson</h1>
+        <h2>UX engineer &amp; methodology buff</h2>
+      </div>
     </header>
     <div class="cv">
-        <div id="about-me">
-            <h3>About me</h3>
-            <p>
-                Hi! 👋 I'm a Canadian expat living in Bergen, Norway. My academic background is a bit of a patchwork
-                quilt, with swatches drawn from philosophy, logic, mathematics, linguistics, computer science, English
-                literature,
-                and psychology. Throughout my studies, I've kept coming back to methodological questions: how do we do
-                things in this discipline? Are we doing them the right way? If not, what does that
-                say about this field? Are better practices possible? If so, what would they look like? How can we
-                measure
-                improvement here? And can the results of methodological investigations and critiques in one domain shed
-                light on how things should (not) be done in other domains?
-            </p>
-            <p>
-                I love powerlifting, parrots, aroid plants, Wittgenstein, version control, cycling, hair dye, CSS Grid,
-                making
-                and consuming food, making and consuming music, and Amsterdam. 🥰
-            </p>
+      <div id="about-me">
+        <h3>About me</h3>
+        <p>
+          Hi! 👋 I'm a Canadian expat living in Bergen, Norway. My academic
+          background is a bit of a patchwork quilt, with swatches drawn from
+          philosophy, logic, mathematics, linguistics, computer science, English
+          literature, and psychology. Throughout my studies, I've kept coming
+          back to methodological questions: how do we do things in this
+          discipline? Are we doing them the right way? If not, what does that
+          say about this field? Are better practices possible? If so, what would
+          they look like? And can the results of methodological investigations
+          and critiques in one domain shed light on how things should (not) be
+          done in other domains?
+        </p>
+        <p>
+          I love powerlifting, parrots, aroid plants, Wittgenstein, version
+          control, cycling, hair dye, CSS Grid, making and consuming food,
+          making and consuming music, and Amsterdam. 🥰
+        </p>
+      </div>
+      <div id="experience">
+        <h3>Experience</h3>
+        <p>
+          I’ve just started as Senior UX Engineer at the Centre for Quality
+          Improvement in Clinical Practices (<a href="https://www.skilnet.no/"
+            >SKIL</a
+          >). Before that, I worked as a developer at
+          <a href="https://www.knowit.no/">Knowit Experience Bergen</a> and
+          <a href="https://www.vizrt.com/">Vizrt</a>. While at Knowit, I created
+          the Frontiers Guidelines: an open-source front-end development
+          guidelines template, inspired by Brad Frost's
+          <a
+            href="https://bradfrost.com/blog/post/frontend-guidelines-questions/"
+            >guidelines questionnaire</a
+          >. You can check out the Frontiers Guidelines project
+          <a href="https://github.com/knowit/frontiers-guidelines">on GitHub</a
+          >.
+        </p>
+        <p>
+          I'm really fond of taking in and giving talks about all aspects of
+          life in teams at work. If that's your jam, too, you might want to
+          check out my talk, Make Yourself at Home:
+        </p>
+        <div style="padding: 56.25% 0 0 0; position: relative">
+          <iframe
+            src="https://player.vimeo.com/video/692587426?h=dcd6e335d7"
+            style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            "
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </div>
-        <div id="experience">
-            <h3>Experience</h3>
-            <p>I’ve just started as Senior UX Engineer at the Norwegian Centre for Quality Improvement in Clinical
-                Practices (<a href="https://www.skilnet.no/">SKIL</a>). Before that, I worked as a developer at <a
-                    href="https://www.knowit.no/">Knowit Experience Bergen</a> and <a
-                    href="https://www.vizrt.com/">Vizrt</a>. While at Knowit, I created the Frontiers Guidelines: an
-                open-source front-end development guidelines template, inspired by Brad Frost's <a
-                    href="https://bradfrost.com/blog/post/frontend-guidelines-questions/">guidelines questionnaire</a>.
-                You can check out the Frontiers Guidelines
-                project <a href="https://github.com/knowit/frontiers-guidelines">on GitHub</a>.
-            </p>
-            <p>
-                I'm really fond of taking in and giving talks about all aspects of life in teams at work. If that's your
-                jam, too, you might want to
-                check out <a href="https://youtu.be/l5gFVM9PM8A">this recording</a> of my talk on impostor sydrome and
-                psychological safety, entitled Make Yourself at Home.
-            </p>
-            <p>
-                I have some new talks, a collection of poems, and podcast with <a
-                    href="https://www.instagram.com/katarzynawid">Kat</a> in the works; when real things happen
-                with these things, you'll be the first to know. 😁
-            </p>
-            <p>
-                If you'd like to get in touch, drop me a line
-                <a href="mailto:maja@jaakson.ca">here</a>.
-            </p>
-        </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+        <p>
+          I have some new talks, a collection of poems, and podcast with
+          <a href="https://www.instagram.com/katarzynawid">Kat</a> in the works;
+          when real things happen with these things, you'll be the first to
+          know. 😁
+        </p>
+        <p>
+          If you'd like to get in touch, drop me a line
+          <a href="mailto:maja@jaakson.ca">here</a>.
+        </p>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
