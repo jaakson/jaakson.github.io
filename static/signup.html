@@ -1,101 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--  -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masonry-like Grid Layout with Subgrid</title>
 
-<style>
-    /* Basic reset for margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <!-- <style>
 
-/* Set the body to center the grid container */
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4; /* Light background for contrast */
-}
+        /* Individual box styles */
 
-/* Grid container styles */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    grid-template-rows: repeat(3, 1fr); /* 3 rows */
-    gap: 0; /* Space between boxes */
-    width: 80vmin; /* Responsive width */
-    height: 80vmin; /* Responsive height */
-    border: #007BFF 2px solid; /* Border color */
-}
+         /* Individual box colors and sizes */
+        .box1 {
+            background-color: #FF5733; /* Red */
+            grid-column: 1; /* First column */
+            grid-row: 1; /* First row */
+            height: auto; /* Allow height to be determined by subgrid */
+            display: grid; /* Enable subgrid */
+            grid-template-columns: repeat(5, 1fr); /* 5 columns for subgrid */
+            grid-template-rows: repeat(12, auto); /* 12 rows for subgrid */
+            grid-row: span 3; /* Span the entire height of the grid */
+        }
 
-/* Central box styles */
-.central-box {
-    grid-column: 2; /* Center column */
-    grid-row: 2; /* Center row */
-    background-color: #007BFF; /* Central box color */
+        .box2 {
+            background-color: #33FF57; /* Green */
+            grid-column: 3; /* Third column */
+            grid-row: 1; /* First row */
+            height: 100px; /* Medium height */
+        }
 
-}
+        .box3 {
+            background-color: #3357FF; /* Blue */
+            grid-column: 1; /* First column */
+            grid-row: 3; /* Third row */
+            height: 80px; /* Shorter box */
+        }
 
-/* Box styles */
-.box {
-    /* border-radius: 10px; Rounded corners for all boxes */
-}
+        .box4 {
+            background-color: #FF33A1; /* Pink */
+            grid-column: 3; /* Third column */
+            grid-row: 3; /* Third row */
+            height: 120px; /* Medium height */
+        }
 
-/* Individual box colors and sizes */
-.box1 {
-    background-color: #FF5733; /* Red */
-    grid-column: 1; /* First column */
-    grid-row: 1; /* First row */
-    height: 100px; /* Fixed height */
-}
+        .box5 {
+            background-color: #FFC300; /* Yellow */
+            grid-column: 1; /* First column */
+            grid-row: 2; /* Second row */
+            height: 60px; /* Short box */
+        }
 
-.box2 {
-    background-color: #33FF57; /* Green */
-    grid-column: 3; /* Third column */
-    grid-row: 1; /* First row */
-    height: 150px; /* Taller box */
-}
+        .box6 {
+            background-color: #DAF7A6; /* Light Green */
+            grid-column: 2; /* Second column */
+            grid-row: 3; /* Third row */
+            height: 90px; /* Medium height */
+        }
+    </style> -->
 
-.box3 {
-    background-color: #3357FF; /* Blue */
-    grid-column: 1; /* First column */
-    grid-row: 3; /* Third row */
-    height: 80px; /* Shorter box */
-}
 
-.box4 {
-    background-color: #FF33A1; /* Pink */
-    grid-column: 3; /* Third column */
-    grid-row: 3; /* Third row */
-    height: 120px; /* Medium height */
-}
+    <style>
+        /* Basic reset for margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.box5 {
-    background-color: #FFC300; /* Yellow */
-    grid-column: 1; /* First column */
-    grid-row: 2; /* Second row */
-    height: 60px; /* Short box */
-}
+        /* Set the body to center the grid container */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4; /* Light background for contrast */
+        }
 
-.box6 {
-    background-color: #DAF7A6; /* Light Green */
-    grid-column: 2; /* Second column */
-    grid-row: 3; /* Third row */
-    height: 90px; /* Medium height */
-}
+        /* Grid container styles */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            grid-template-rows: repeat(3, 1fr); /* 3 rows */
+            width: 80vmin; /* Responsive width */
+            height: 80vmin; /* Responsive height */
+            border: #007BFF 2px solid; /* Border color */
+        }
 
-</style>
+        /* Central box styles */
+        .central-box {
+            grid-column: 2; /* Center column */
+            grid-row: 2; /* Center row */
+            border: 1px solid black;
+            background-color: #007BFF; /* Central box color */
+            height: 100%; /* Full height of the grid cell */
+        }
+
+        /* Box styles */
+        .box, .subgrid-box {
+            /* No rounded corners for sharp edges */
+            border: 1px solid black; /* strong border for contrast */
+        }
+
+        /* Subgrid boxes */
+        .subgrid-box {
+            height: 50px; /* Fixed height for subgrid boxes */
+        }
+
+        /* Individual colors for subgrid boxes */
+        .subgrid-box1 { background-color: #FF5733; } /* Red */
+        .subgrid-box2 { background-color: #33FF57; } /* Green */
+        .subgrid-box3 { background-color: #3357FF; } /* Blue */
+        .subgrid-box4 { background-color: #FF33A1; } /* Pink */
+        .subgrid-box5 { background-color: #FFC300; } /* Yellow */
+        .subgrid-box6 { background-color: #DAF7A6; } /* Light Green */
+        .subgrid-box7 { background-color: #FF8C00; } /* Dark Orange */
+        .subgrid-box8 { background-color: #8A2BE2; } /* Blue Violet */
+        .subgrid-box9 { background-color: #20B2AA; } /* Light Sea Green */
+        .subgrid-box10 { background-color: #FF4500; } /* Orange Red */
+        .subgrid-box11 { background-color: #FFD700; } /* Gold */
+        .subgrid-box12 { background-color: #ADFF2F; } /* Green Yellow */
+        .subgrid-box13 { background-color: #7B68EE; } /* Medium Slate Blue */
+        .subgrid-box14 { background-color: #FF1493; } /* Deep Pink */
+        .subgrid-box15 { background-color: #00CED1; } /* Dark Turquoise */
+
+        /* Subgrid layouts */
+
+            .subgrid.top-frame {
+            display: subgrid; /* Enable subgrid */  
+            grid-row: 1 ; /* Span the first row of the grid */
+            grid-column: 2 / -1; /* Span all columns of the parent grid */
+            grid-template-columns: repeat(5, auto); /* 12 columns */
+            grid-template-rows: repeat(3, auto); /* 3 rows for the subgrid */
+            
+            .subgrid-box {
+                height: auto;
+            }
+
+
+        }
+
+        .subgrid.left-frame {
+            display: subgrid; /* Enable subgrid */
+        /*    height: 100%;  Full height of the parent box */
+            grid-column: span 12; /* Align with the first column of the parent grid */
+            grid-row: 2 / 3; /* Span the entire height of the grid */
+        }
+
+                /* Subgrid layout */
+        .subgrid.right-frame {
+            display: subgrid; /* Enable subgrid */
+            grid-template-columns: repeat(5, 1fr); /* 5 columns */
+            grid-template-rows: repeat(12, auto); /* 12 rows */
+            height: 100%; /* Full height of the parent box */
+            grid-column: -1; /* Align with the last column of the parent grid */
+            grid-row: span 4; /* Span the entire height of the grid */
+        }
+    </style>
+</head>
 
 <body>
     <div class="grid-container">
-        <div class="box box1"></div>
-        <div class="box box2"></div>
-        <div class="box box3"></div>
-        <div class="central-box"></div>
-        <div class="box box4"></div>
-        <div class="box box5"></div>
-        <div class="box box6"></div>
+                <div class="subgrid top-frame">
+                <div class="subgrid-box subgrid-box1">I am TOP </div>
+                <div class="subgrid-box subgrid-box2">I am TOP </div>
+                <div class="subgrid-box subgrid-box3">I am TOP </div>
+                <div class="subgrid-box subgrid-box4">I am TOP </div>
+                <div class="subgrid-box subgrid-box5">I am TOP </div>
+                <div class="subgrid-box subgrid-box6">I am TOP </div>
+                <div class="subgrid-box subgrid-box7">I am TOP </div>
+                <div class="subgrid-box subgrid-box8">I am TOP </div>
+                <div class="subgrid-box subgrid-box9">I am TOP </div>
+                <div class="subgrid-box subgrid-box10">I am TOP </div>
+                <div class="subgrid-box subgrid-box11">I am TOP </div>
+                <div class="subgrid-box subgrid-box12">I am TOP </div>
+                <div class="subgrid-box subgrid-box13">I am TOP </div>
+                <div class="subgrid-box subgrid-box14">I am TOP </div>
+                <div class="subgrid-box subgrid-box15">I am TOP </div>
+            </div>
+
+            <!-- <div class="subgrid left-frame">
+                <div class="subgrid-box subgrid-box1">I am LEFT </div>
+                <div class="subgrid-box subgrid-box2">I am LEFT </div>
+                <div class="subgrid-box subgrid-box3">I am LEFT </div>
+                <div class="subgrid-box subgrid-box4">I am LEFT </div>
+                <div class="subgrid-box subgrid-box5">I am LEFT </div>
+                <div class="subgrid-box subgrid-box6">I am LEFT </div>
+                <div class="subgrid-box subgrid-box7">I am LEFT </div>
+                <div class="subgrid-box subgrid-box8">I am LEFT </div>
+                <div class="subgrid-box subgrid-box9">I am LEFT </div>
+                <div class="subgrid-box subgrid-box10">I am LEFT </div>
+                <div class="subgrid-box subgrid-box11">I am LEFT </div>
+                <div class="subgrid-box subgrid-box12">I am LEFT </div>
+                <div class="subgrid-box subgrid-box13">I am LEFT </div>
+                <div class="subgrid-box subgrid-box14">I am LEFT </div>
+                <div class="subgrid-box subgrid-box15">I am LEFT </div>
+            </div> -->
+                            <div class="subgrid right-frame">
+                <div class="subgrid-box subgrid-box1">I am RIGHT </div>
+                <div class="subgrid-box subgrid-box2">I am RIGHT </div>
+                <div class="subgrid-box subgrid-box3">I am RIGHT </div>
+                <div class="subgrid-box subgrid-box4">I am RIGHT </div>
+                <div class="subgrid-box subgrid-box5">I am RIGHT </div>
+                <div class="subgrid-box subgrid-box6">I am RIGHT </div>
+                <div class="subgrid-box subgrid-box7">I am RIGHT </div>
+                <div class="subgrid-box subgrid-box8">I am RIGHT </div>
+                <div class="subgrid-box subgrid-box9">I am RIGHT </div>
+                <div class="subgrid-box subgrid-box10">I am  RIGHT </div>
+                <div class="subgrid-box subgrid-box11">I am  RIGHT </div>
+                <div class="subgrid-box subgrid-box12">I am  RIGHT </div>
+                <div class="subgrid-box subgrid-box13">I am  RIGHT </div>
+                <div class="subgrid-box subgrid-box14">I am  RIGHT </div>
+                <div class="subgrid-box subgrid-box15">I am  RIGHT </div>
+            </div>
+
+
+
+
+
+        <!-- <div class="box box1">        </div> -->
+        <!-- <div class="box box2">i am box2</div>
+        <div class="box box3">i am box3</div>
+        <div class="box box4">i am box4</div>
+        <div class="box box5">i am box5</div>
+        <div class="box box6">i am box6</div>
+        <div class="box box7">i am box7</div>
+        <div class="box box8">i am box8</div>
+        <div class="box box9">i am box9</div> -->
+        <div class="central-box"> central</div>
     </div>
 </body>
+
 </html>
