@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    /* Basic reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set the body to center the grid container */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4; /* Light background for contrast */
+}
+
+/* Grid container styles */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(3, 1fr); /* 3 rows */
+    gap: 0; /* Space between boxes */
+    width: 80vmin; /* Responsive width */
+    height: 80vmin; /* Responsive height */
+    border: #007BFF 2px solid; /* Border color */
+}
+
+/* Central box styles */
+.central-box {
+    grid-column: 2; /* Center column */
+    grid-row: 2; /* Center row */
+    background-color: #007BFF; /* Central box color */
+
+}
+
+/* Box styles */
+.box {
+    /* border-radius: 10px; Rounded corners for all boxes */
+}
+
+/* Individual box colors and sizes */
+.box1 {
+    background-color: #FF5733; /* Red */
+    grid-column: 1; /* First column */
+    grid-row: 1; /* First row */
+    height: 100px; /* Fixed height */
+}
+
+.box2 {
+    background-color: #33FF57; /* Green */
+    grid-column: 3; /* Third column */
+    grid-row: 1; /* First row */
+    height: 150px; /* Taller box */
+}
+
+.box3 {
+    background-color: #3357FF; /* Blue */
+    grid-column: 1; /* First column */
+    grid-row: 3; /* Third row */
+    height: 80px; /* Shorter box */
+}
+
+.box4 {
+    background-color: #FF33A1; /* Pink */
+    grid-column: 3; /* Third column */
+    grid-row: 3; /* Third row */
+    height: 120px; /* Medium height */
+}
+
+.box5 {
+    background-color: #FFC300; /* Yellow */
+    grid-column: 1; /* First column */
+    grid-row: 2; /* Second row */
+    height: 60px; /* Short box */
+}
+
+.box6 {
+    background-color: #DAF7A6; /* Light Green */
+    grid-column: 2; /* Second column */
+    grid-row: 3; /* Third row */
+    height: 90px; /* Medium height */
+}
+
+</style>
+
+<body>
+    <div class="grid-container">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="central-box"></div>
+        <div class="box box4"></div>
+        <div class="box box5"></div>
+        <div class="box box6"></div>
+    </div>
+</body>
+</html>
